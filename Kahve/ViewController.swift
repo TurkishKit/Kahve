@@ -24,7 +24,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/coffee.scn")!
+        
+        let node = scene.rootNode.childNode(withName: "root", recursively: true)
+        
+        node?.position = .init(0, -0.5, -0.5)
+        node?.scale = .init(0.05,0.05,0.05)
         
         // Set the scene to the view
         sceneView.scene = scene
